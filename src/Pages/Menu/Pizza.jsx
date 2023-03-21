@@ -8,7 +8,7 @@ import MenuBox from './MenuBox'
 const Pizza = () => {
   const [data,setData] = useState([])
   useEffect(()=>{
-    axios.get("http://localhost:8080/pizza")
+    axios.get("https://motionless-red-meerkat.cyclic.app/pizza")
     .then((res)=>setData(res.data))
   },[])
   const GlobalContext = useContext(CartContext)
@@ -18,7 +18,7 @@ const Pizza = () => {
       <MenuBox/>
       <Grid templateColumns='repeat(3, 1fr)' gap={6}>
 {
-  data?.map((item)=>{
+  data.length > 0 && data.map((item)=>{
     item.product = "pizza"
     return (
       <GridItem boxShadow='base' p='6' rounded='md' bg='white' margin ="auto" key={item.id} >

@@ -8,7 +8,7 @@ import MenuBox from './MenuBox'
 const Burger = () => {
   const [data, setData ] = useState([])
   useEffect(()=>{
-  axios.get("http://localhost:8080/products")
+  axios.get("https://motionless-red-meerkat.cyclic.app/products")
   .then((res)=>setData(res.data))
   },[])
  

@@ -10,11 +10,11 @@ import MenuBox from './MenuBox'
 const Food = () => {
   const [data, setData] = useState([])
 useEffect(()=>{
-  axios.get("http://localhost:8080/food")
-  .then((res)=>{ console.log(res.data)
-    return setData(res.data)})
+  axios.get("https://motionless-red-meerkat.cyclic.app/food")
+  .then((res)=>{ 
+    return setData(res.data )})
 },[])
-
+console.log(data)
 const Globalcontext = useContext(CartContext)
   const dispatch = Globalcontext.dispatch
   return (
@@ -25,7 +25,7 @@ const Globalcontext = useContext(CartContext)
       <SimpleGrid  spacing={8}  minChildWidth={"350px"} >
       {
         
-        data.map((item)=>{
+        data.length > 0 && data.map((item)=>{
         item.quantity = 1
         item.product = "drinks" 
         return ( 

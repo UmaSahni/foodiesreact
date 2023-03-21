@@ -14,7 +14,7 @@ const AddProduct = () => {
       }
     axios({
         method:"post",
-        url:"http://localhost:8080/dessert",
+        url:"https://motionless-red-meerkat.cyclic.app/dessert",
         data:obj
     })
     .then((res)=>console.log(res))

@@ -40,7 +40,7 @@ const {data,loading,error} = state
     const getData = async (id)=>{
     
     axios
-    .get(`http://localhost:8080/products/${id}`)
+    .get(`https://motionless-red-meerkat.cyclic.app/products/${id}`)
     .then((res)=>{
         dispatch({type:"SUCCESS",payload: res.data});
         console.log(res.data)

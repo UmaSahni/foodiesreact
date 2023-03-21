@@ -9,7 +9,7 @@ const Dessert = () => {
  
  const [data,setData] = useState([])
 useEffect(()=>{
-axios.get("http://localhost:8080/dessert")
+axios.get("https://motionless-red-meerkat.cyclic.app/dessert")
 .then((res)=>{ console.log(res.data)
  return setData(res.data)})
 },[])
